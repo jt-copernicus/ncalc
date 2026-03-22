@@ -1,0 +1,69 @@
+.TH NCALC 1 "March 2026" "ncalc 3.0" "User Commands"
+.SH NAME
+ncalc \- Terminal Scientific Calculator & CAS with Advanced Calculus
+.SH SYNOPSIS
+.B ncalc
+.SH DESCRIPTION
+.B ncalc
+is a terminal-based Computer Algebra System (CAS). It uses the \fBGiNaC\fR library for symbolic computation and \fBncursesw\fR for a UTF-8 enabled split-window interface.
+
+.SH COMMAND SYNTAX
+.SS Solving Equations
+Use the \fBfind\fR command (Ctrl+f) to solve for a specific variable.
+.IP "find x, 2x = 10"
+Solves linear equations. Result: \fBx = 5\fR.
+.IP "find y, y^2 = 4x"
+Solves quadratic equations. Result: \fBy = {2*sqrt(x), -2*sqrt(x)}\fR.
+
+.SS Derivatives
+.IP "diff(sin(x), x)"
+Standard symbolic derivative.
+.IP "df/dx(1,0) where f(x,y) = x^2 + y^2"
+Calculates the partial derivative with respect to x at the point (1,0). The \fBwhere\fR clause is triggered by \fBCtrl+w\fR.
+
+.SS Integrals
+Use the syntax \fBi(upper,lower), expr dvar\fR.
+.IP "i(2,0), x^2 dx"
+Definite integral of x^2 from 0 to 2. Calculated numerically via Simpson's Rule. Result: \fBA = 2.666667\fR.
+
+.SH KEYBOARD SHORTCUTS
+.SS General
+.IP "Ctrl + g"
+Toggle between Calculator and Graph modes.
+.IP "Ctrl + f"
+Insert "find " command.
+.IP "Ctrl + w"
+Insert " where " clause.
+.IP "Tab"
+Switch focus between the Input and History panels.
+.IP "q"
+Quit the application.
+
+.SS Math Shortcuts
+.IP "Ctrl + d"
+Insert \fBdiff(\fR.
+.IP "Alt + f"
+Insert \fBf(\fR.
+.IP "Alt + u, l, e, v"
+Insert placeholders \fBupper\fR, \fBlower\fR, \fBexpr\fR, and \fBdvar\fR for integration.
+.IP "s, c, t"
+Insert \fBsin(\fR, \fBcos(\fR, \fBtan(\fR.
+.IP "i"
+Insert integral command \fBi(\fR.
+.IP "Ctrl + p, e, n"
+Insert constants \fBPi\fR, \fBexp(1)\fR (Euler's number), and \fBI\fR (Imaginary unit).
+
+.SS Graph Mode
+.IP "j / k"
+Zoom Out / In.
+.IP "+ / -"
+Zoom In / Out.
+.IP "Arrows"
+Zoom (depending on terminal support).
+
+.SH AUTHOR
+Jonathan R. Torres
+.SH LICENSE
+Licensed under GPL-3.0-or-later
+.SH SEE ALSO
+.BR ginac (1)

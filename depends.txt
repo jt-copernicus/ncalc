@@ -1,0 +1,8 @@
+To build and run this application, you will need the following dependencies:
+
+1. build-essential (g++, make)
+2. libncurses-dev (ncurses library development files)
+3. libginac-dev (GiNaC library for symbolic computation)
+4. libcln-dev (Class Library for Numbers, required by GiNaC)
+
+
